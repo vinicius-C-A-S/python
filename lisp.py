@@ -10,10 +10,20 @@ def fact(n):
 
 def fibonacci(n):
     n = int(n)
-    if n <= 1:
-        return 1
-    else:
-        return fibonacci(n-1)+fibonacci(n-2)
+ultimo=1
+penultimo=1
+
+
+if (n==1) or (n==2):
+    print("1")
+else:
+    count=3
+    while count <= n:
+        termo = ultimo + penultimo
+        penultimo = ultimo
+        ultimo = termo
+        count += 1
+    print(termo)
 
 arquivo =[linhas.strip().split() for linhas in open("./input.dat").readlines()]
 
